@@ -16,5 +16,9 @@ describe Atm do
         subject.withdraw(50, account)
         expect(subject.funds).to eq 950
     end
+    it 'allow withdraw if the account has enough balance.' do
+        expected_output = { status: true, message: 'success', Date.today, amount: 45}
+        expect(subject.withdraw(45,account)).to. eq expected_output
+    end  
 end
 
